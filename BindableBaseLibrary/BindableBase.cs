@@ -19,7 +19,7 @@ namespace BindableBaseLibrary
     public abstract class BindableBase : INotifyPropertyChanged
     {
         /// <summary>
-        ///     Multicast event for property change notifications.
+        ///     Declare the event for property change notifications.
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -28,9 +28,10 @@ namespace BindableBaseLibrary
         ///     notifies listeners only when necessary.
         /// </summary>
         /// <typeparam name="T">Type of the property.</typeparam>
-        /// <param name="storage">Reference to a property with both getter and setter.</param>
+        /// <param name="storage">Reference to the property need the value change </param>
         /// <param name="value">Desired value for the property.</param>
-        /// <param name="propertyName">Name of the property used to notify listeners.</param>
+        /// <param name="propertyName">Name of the property used to notify listeners.
+        /// By defautlt it would be caller memeber's name.</param>
         /// <returns>
         ///     True if the value was changed, false if the existing value matched the
         ///     desired value.
